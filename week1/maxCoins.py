@@ -8,4 +8,4 @@ class Solution:
             sum +=piles.pop()
             piles.popleft()
         return sum 
-        
+        ,
