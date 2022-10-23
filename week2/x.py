@@ -1,44 +1,15 @@
-class node:
-    def __init__(self,data=None):
-        self.data = data
-        self.next = None
+def nextGreaterElement(nums1, nums2 ):
+    nums1Index = {n:i for i,n in enumerate(nums1)}
+    ans = [-1]*len(nums1)
+    for i in range(len(nums2)):
+        if nums2[i] not in nums1:
+            continue
+        for j in range(i+1, len(nums2)):
+             if nums2[j] > nums2[i]:
+                 inx = nums1Index[nums2[i]]
+                 ans[inx] = nums2[j]
+                 break
+    print(ans)
 
-class LinkedList:
-    def __init__(self):
-        self.head = node()
-    
-    def append(self,data):
-        new_node = node(data)
-        cur = self.head
-        while cur.next != None:
-            cur = cur.next
-        cur.next = new_node
-        
-        
-    def length(self):
-        tot = 0
-        cur = self.head
-        while cur.next !=None:
-            tot += 1
-            cur = cur.next
-        return tot
-    
-    def display(self):
-        arr = []
-        cur = self.head
-        while cur.next !=None:
-            arr.append(cur.next.data)
-            cur = cur.next
-        print(arr)
-        
-myList = LinkedList()
-print(myList.length())
 
-myList.append(50)
-myList.append(51)
-myList.display()
-
-        
-            
-        
-        
+nextGreaterElement([4,1,2], [1,3,4,2])

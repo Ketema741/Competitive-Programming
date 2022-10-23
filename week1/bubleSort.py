@@ -20,12 +20,12 @@ def countSwaps(a):
         for j in range(n-i-1):
             if a[j] > a[j + 1]:
                 a[j], a[j+1] = a[j+1], a[j]
-                count+=1
+                count += 1
     print("Array is sorted in {} swaps.".format(count))
     print("First Element: {}".format(a[0]))
     print("Last Element: {}".format(a[n-1]))
    
-
+ 
 if __name__ == '__main__':
     n = int(input().strip())
 
