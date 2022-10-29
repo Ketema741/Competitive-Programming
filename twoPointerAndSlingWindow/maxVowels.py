@@ -5,7 +5,7 @@ class Solution:
         for right in range(len(s)):
             if s[right] in v:
                 vCount += 1
-            if (right - left + 1) == k:
+            if (right - left + 1) == k :
                 res = max(res, vCount)
                 if s[left] in v:
                     vCount -= 1
